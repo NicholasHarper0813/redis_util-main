@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 echo "Setting up Redis"
-
 echo "Update packages"
+
 sudo apt-get update
 
 echo "Install build-essential"
+
 # Check if build-essential is installed, if not, install it
 if [ $(dpkg-query -W -f='${Status}' build-essential 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
@@ -39,7 +40,6 @@ echo "Install Redis"
 sudo make install
 
 cd utils
-
 echo "Starting Redis server"
 sudo ./install_server.sh
 
