@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 echo "Setting up Redis"
-
 echo "Update packages"
 sudo apt-get update
 
@@ -27,7 +26,7 @@ if [ ! -f redis-stable.tar.gz ]; then
   wget http://download.redis.io/redis-stable.tar.gz
   tar xvzf redis-stable.tar.gz && cd redis-stable
 fi
-# Check before executing make if it's already installed
+
 make
 make test
 
